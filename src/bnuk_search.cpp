@@ -437,11 +437,11 @@ std::vector<Vector3i> bnuk_search::Neighbor(Vector3i current_idx) {
 void bnuk_search::setStartState(vector<Vector3d> state) {
   /**** set startstate ****/
   if (state.size() > _DEG) {
-    cerr << "V_F_RBK_search: startstate too much" << endl;
+    cerr << "BNUKsearch: startstate too much" << endl;
     return;
   }
   if (state.size() < _DEG - 1)
-    cerr << "V_F_RBK_search: startstate too few" << endl;
+    cerr << "BNUKsearch: startstate too few" << endl;
 
   for (int i = 0; i < state.size(); i++) {
     start_state(i, 0) = state[i](0);
@@ -472,7 +472,7 @@ void bnuk_search::setEndState(vector<Vector3d> state) {
   }
 
   if (state.size() != 2)
-    cerr << "V_F_RBK_search: endstate :" << state.size() << endl;
+    cerr << "BNUKsearch: endstate :" << state.size() << endl;
 
   for (int i = 0; i < state.size(); i++) {
     end_state(i, 0) = state[i](0);
@@ -491,7 +491,7 @@ void bnuk_search::setEndState(vector<Vector3d> state) {
   end_node[1].cameFrom = &end_node[0];
 
 
-  /***** set end velocity field ****/
+  /***** set end absorption domain  ****/
 
   for (int x = -int(max_vel * inv_resolution); x <= int(max_vel * inv_resolution); x++) {
     for (int y = -int(max_vel * inv_resolution); y <= int(max_vel * inv_resolution); y++) {
@@ -607,7 +607,7 @@ void bnuk_search::clearNodeMap() {
 }
 
 
-void bnuk_search::V_F_RBK_search() {
+void bnuk_search::BNUKsearch() {
   ros::Time time_1 = ros::Time::now();
   openSet.clear();
   BSplineGridNodePtr neighborPtr = NULL;

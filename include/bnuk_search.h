@@ -124,7 +124,7 @@ class bnuk_search {
   void linkCollsionMap(std::shared_ptr<sdf_tools::CollisionMapGrid> collision_map);
   void resetLocalMap();
   void clearNodeMap();
-  void V_F_RBK_search();
+  void BNUKsearch();
   void resetCollisionMap();
   void resetPath();
   std::vector<Eigen::Vector3d> getpath();

@@ -664,7 +664,7 @@ bool kinodynamic_traj_planning() {
   _searcher->setStartState(_start_state);
   _searcher->setEndState(_end_state);
   //visVel();
-  _searcher->V_F_RBK_search();
+  _searcher->BNUKsearch();
   ros::Time time_search2 = ros::Time::now();
   bnuk_log.compute_time.push_back((time_search2 - time_vf1).toNSec() / 1000000.0);
   cout << "bnuk_search compute_time:" << (time_search2 - time_vf1).toNSec() / 1000000.0 << "ms" << endl;

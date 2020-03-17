@@ -6,18 +6,13 @@ Panels:
       Expanded:
         - /Global Options1
         - /Grid1/Offset1
-        - /AllMap1
         - /AllMap1/Autocompute Value Bounds1
-        - /LocalMap1
         - /LocalMap1/Autocompute Value Bounds1
-        - /Robot1
-        - /Path1
-        - /Trajectory1
-        - /StopTraj1
         - /ExpNodes1
-        - /GridPath1
+        - /ControlPoints1
+        - /Vel1
         - /Vel1/Namespaces1
-        - /TF1
+        - /steplen1
       Splitter Ratio: 0.537790716
     Tree Height: 454
   - Class: rviz/Selection
@@ -128,36 +123,6 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 5.9000001
-        Min Value: 0
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: FlatColor
-      Decay Time: 0
-      Enabled: false
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 4096
-      Min Color: 0; 0; 0
-      Min Intensity: 0
-      Name: InflateMap
-      Position Transformer: XYZ
-      Queue Size: 1
-      Selectable: false
-      Size (Pixels): 5
-      Size (m): 0.200000003
-      Style: Boxes
-      Topic: /random_forest_sensing/all_map
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: false
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
         Max Value: 3.70000005
         Min Value: 0.100000001
         Value: false
@@ -193,46 +158,22 @@ Visualization Manager:
         mesh: true
       Queue Size: 100
       Value: true
-    - Class: rviz/MarkerArray
-      Enabled: false
-      Marker Topic: /b_traj_node/corridor_vis
-      Name: Corridor
-      Namespaces:
-        {}
-      Queue Size: 100
-      Value: false
     - Class: rviz/Marker
       Enabled: true
       Marker Topic: /bnuk_node/check_trajectory
       Name: CheckTraj
       Namespaces:
-        trajectory/check_trajectory: true
-      Queue Size: 100
-      Value: true
-    - Class: rviz/MarkerArray
-      Enabled: false
-      Marker Topic: /bnuk_node/grid_path_vis
-      Name: Path
-      Namespaces:
         {}
       Queue Size: 100
-      Value: false
+      Value: true
     - Class: rviz/Marker
       Enabled: true
       Marker Topic: /bnuk_node/trajectory_vis
       Name: Trajectory
       Namespaces:
-        bnuk_opt: true
-      Queue Size: 100
-      Value: true
-    - Class: rviz/Marker
-      Enabled: false
-      Marker Topic: /bnuk_node/stop_trajectory
-      Name: StopTraj
-      Namespaces:
         {}
       Queue Size: 100
-      Value: false
+      Value: true
     - Class: rviz/Marker
       Enabled: false
       Marker Topic: /bnuk_node/expanded_nodes_vis
@@ -244,27 +185,19 @@ Visualization Manager:
     - Class: rviz/MarkerArray
       Enabled: false
       Marker Topic: /bnuk_node/grid_path_vis
-      Name: GridPath
+      Name: ControlPoints
       Namespaces:
         {}
       Queue Size: 100
       Value: false
     - Class: rviz/Marker
-      Enabled: false
-      Marker Topic: /bnuk_trajectory_server_node/desired_acceleration
-      Name: Acc
-      Namespaces:
-        {}
-      Queue Size: 100
-      Value: false
-    - Class: rviz/Marker
-      Enabled: false
-      Marker Topic: /bnuk_trajectory_server_node/desired_velocity
+      Enabled: true
+      Marker Topic: /bnuk_node/current
       Name: Vel
       Namespaces:
         {}
       Queue Size: 100
-      Value: false
+      Value: true
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
@@ -275,7 +208,7 @@ Visualization Manager:
       Length: 0.300000012
       Line Style: Billboards
       Line Width: 0.100000001
-      Name: Path
+      Name: HistoryPath
       Offset:
         X: 0
         Y: 0
@@ -288,42 +221,13 @@ Visualization Manager:
       Topic: /odom_visualization_ukf_2/path
       Unreliable: false
       Value: true
-    - Alpha: 1
-      Buffer Length: 1
-      Class: rviz/Path
-      Color: 19; 194; 0
+    - Class: rviz/MarkerArray
       Enabled: false
-      Head Diameter: 0.300000012
-      Head Length: 0.200000003
-      Length: 0.300000012
-      Line Style: Billboards
-      Line Width: 0.100000001
-      Name: Path
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
-      Pose Color: 255; 85; 255
-      Pose Style: None
-      Radius: 0.0299999993
-      Shaft Diameter: 0.100000001
-      Shaft Length: 0.100000001
-      Topic: /odom_visualization_fm/path
-      Unreliable: false
-      Value: false
-    - Class: rviz/TF
-      Enabled: false
-      Frame Timeout: 15
-      Frames:
-        All Enabled: true
-      Marker Scale: 1
-      Name: TF
-      Show Arrows: true
-      Show Axes: true
-      Show Names: true
-      Tree:
+      Marker Topic: /bnuk_node/steplen
+      Name: steplen
+      Namespaces:
         {}
-      Update Interval: 0
+      Queue Size: 100
       Value: false
   Enabled: true
   Global Options:
@@ -345,25 +249,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 68.7364426
+      Distance: 61.9231224
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 21.1662693
-        Y: 14.2162619
-        Z: 2.63178349
+        X: 25.4661179
+        Y: 13.0485706
+        Z: -1.95229256
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.56979632
+      Pitch: 1.08479679
       Target Frame: quadrotor
       Value: Orbit (rviz)
-      Yaw: 4.6874938
+      Yaw: 4.63249874
     Saved:
       - Class: rviz/Orbit
         Distance: 15

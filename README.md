@@ -35,7 +35,7 @@ Our testing environment: **Ubuntu** 16.04, **ROS** Kinetic.
 - Step 2: Clone the repository to your catkin workspace and catkin_make. For example:
 ```
   cd ~/catkin_ws/src
-  git clone https://github.com/tlb/BNUKsearch.git
+  git clone https://github.com/tlb9551/BNUKsearch.git
   cd ..
   catkin_make
   source ~/catkin_ws/devel/setup.bash
